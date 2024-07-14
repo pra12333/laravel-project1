@@ -67,10 +67,5 @@ body {
     <a href="#about">About</a>
   </div>
 </div>
-
-
-<div class='container'>
-    @yield('content')
-  </div>
 </body>
 </html>

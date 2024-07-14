@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('homeform');
+Route::get('/', [FileController::class, 'index'])->name('homeform');
 
 Route::get('/add', function () {
     return view('addform');
@@ -25,6 +24,6 @@ Route::get('/update', function () {
     return view('updateform');
 })->name('updateform');
 
-Route::get('/view', function () {
-    return view('viewform');
-})->name('viewform');
+Route::get('/view', [FileController::class, 'view'])->name('viewform');
+Route::get('/dataform', [FileController::class, 'data'])->name('dataform');
+Route::post('/insert', [FileController::class, 'insert'])->name('insertdata');

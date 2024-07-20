@@ -7,6 +7,7 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Password</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +16,8 @@
           <td>{{ $data->name }}</td>
           <td>{{ $data->email }}</td>
           <td>{{ $data->password }}</td>
-        </tr>
+          <td><a href="{{ url('update' . $data->id) }}" class="btn btn-success">Update</a> <a href="{{ url('delete' . $data->id) }}" class="btn btn-danger">Delete</a></td>
+        </tr>                  
       @endforeach
     </tbody>
   </table>

@@ -27,3 +27,6 @@ Route::get('/update', function () {
 Route::get('/view', [FileController::class, 'view'])->name('viewform');
 Route::get('/dataform', [FileController::class, 'data'])->name('dataform');
 Route::post('/insert', [FileController::class, 'insert'])->name('insertdata');
+Route::get('/update{id}', [FileController::class, 'update'])->name('update');
+Route::put('/addupdate/{id}', [FileController::class, 'addupdate'])->name('addupdate');
+Route::get('/delete{id}', [FileController::class, 'delete'])->name('delete');
